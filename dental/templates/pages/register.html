@@ -1,0 +1,51 @@
+{% extends 'components/guest.html' %}
+{% load static %}
+
+
+
+{% block subTitle %}
+    
+{% endblock subTitle %}
+
+
+
+{% block subContent %}
+    <div class="h-screen w-full flex items-center justify-center">
+        <form action="" method="post" class="w-96 h-auto flex flex-col space-y-5 p-5 bg-white rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-pink-500 text-center tracking-wider flex justify-center">
+                <span class="flex items-center space-x-2">
+                    <img src="{% static 'images/logo.png' %}" alt="" srcset="" class="h-10 w-auto object object-center">
+                    <span>Register</span>
+                </span>
+            </h1>
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Username</label>
+                <input type="text" class="p-2 bg-gray-100 rounded-lg w-full" placeholder="Username">
+            </div>  
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Email</label>
+                <input type="email" class="p-2 bg-gray-100 rounded-lg w-full" placeholder="Email">
+            </div>
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Password</label>
+                <input type="password" class="p-2 bg-gray-100 rounded-lg w-full" placeholder="Password">
+            </div>  
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Retype Password</label>
+                <input type="password" class="p-2 bg-gray-100 rounded-lg w-full" placeholder="Retype Password">
+            </div>    
+
+            <button class="p-4 bg-pink-500 hover:bg-pink-700 text-white rounded-lg duration-700">Submit</button>
+            <p class="text-gray-500 text-sm">
+            
+                Already have account? <span class="text-sm font-bold text-pink-500">
+                    <a href="{{HTTP_HOST}}/login">
+                       Sign in
+                    </a>
+                 
+                </span>
+            </p>
+        </form>
+    </div>
+{% endblock subContent %}
+    

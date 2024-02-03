@@ -1,0 +1,44 @@
+{% extends 'components/guest.html' %}
+{% load static %}
+
+
+
+{% block subTitle %}
+    
+{% endblock subTitle %}
+
+
+
+{% block subContent %}
+    <div class="h-screen w-full flex items-center justify-center">
+        <form action="{% url 'login' %}" method="post" class="w-96 h-auto flex flex-col space-y-5 p-5 bg-white rounded-lg shadow-lg">
+            <h1 class="text-4xl font-bold text-pink-500 text-center tracking-wider flex justify-center">
+                <span class="flex items-center space-x-2">
+                    <img src="{% static 'images/logo.png' %}" alt="" srcset="" class="h-10 w-auto object object-center">
+                    <span> Login</span>
+                </span>
+            </h1>
+            {% csrf_token %}
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Username</label>
+                <input type="text" class="p-2 bg-gray-100 rounded-lg w-full" name="username" placeholder="Username">
+            </div>  
+            <div class="flex flex-col gap-5">
+                <label for="" class="text-sm text-gray-500">Password</label>
+                <input type="password" class="p-2 bg-gray-100 rounded-lg w-full" name="password" placeholder="Password">
+            </div>  
+
+            <button class="p-4 bg-pink-500 hover:bg-pink-700 text-white rounded-lg duration-700">Login</button>
+            <p class="text-gray-500 text-sm">
+            
+                Don't have account <span class="text-sm font-bold text-pink-500">
+                    <a href="{{HTTP_HOST}}/register">
+                        Create new account
+                    </a>
+                 
+                </span>
+            </p>
+        </form>
+    </div>
+{% endblock subContent %}
+    

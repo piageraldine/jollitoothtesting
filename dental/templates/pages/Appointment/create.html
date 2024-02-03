@@ -1,0 +1,52 @@
+{% extends 'components/guest.html' %}
+{% load static %}
+
+
+
+{% block subTitle %}
+
+{% endblock subTitle %}
+
+
+
+{% block subContent %}
+
+    <div class="min-h-screen w-full flex justify-center items-center">
+        <div class="w-1/2 flex flex-col h-auto rounded-lg bg-white shadow-lg p-2">
+            <h1 class="text-2xl font-bold tracking-widest text-pink-500">Set Appointment</h1>
+            <form action="{% url 'set-appointment' %}" method="post" class="flex flex-col gap-2">
+
+                {% csrf_token %}
+                <div class="flex flex-col gap-2">
+                    <label for="">Name</label>
+                    <input type="text" name="patient" class="input input-secondary bg-gray-100" placeholder="Name">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="">Date</label>
+                    <input type="date" name="date" class="input input-secondary bg-gray-100">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="">Service</label>
+                    <select class="select select-secondary w-full bg-gray-100" name="service">
+                        <option disabled selected>Select Service</option>
+                        
+                        {% for service in  services %}
+                        <option value="{{service.id}}">{{service.name}}</option>
+                        {% endfor %}
+                            
+                       
+                        <!-- <option>Go</option>
+                        <option>C</option>
+                        <option>C#</option>
+                        <option>C++</option>
+                        <option>Rust</option>
+                        <option>JavaScript</option>
+                        <option>Python</option> -->
+                      </select>
+                </div>
+                <button class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock subContent %}

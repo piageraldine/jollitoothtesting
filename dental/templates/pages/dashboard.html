@@ -1,0 +1,137 @@
+{% extends 'components/layout/auth.html' %}
+
+
+
+{% block sub_title %}
+admin
+{% endblock sub_title %}
+
+
+
+
+{% block sub_content %}
+<div class="h-full w-full rounded-lg bg-gray-50 flex flex-col gap-2 p-5">
+    <div class="grid grid-cols-3 grid-flow-row h-32 gap-2">
+        <div class="w-full bg-accent rounded-lg p-2 flex flex-col gap-5">
+            <span class="flex text-lg w-full justify-start text-white font-bold">
+                Appointments
+            </span>
+            <span class="flex justify-end text-3xl font-bold truncate w-full text-white">
+                {{total_appointment}}
+            </span>
+        </div>
+        <div class="w-full bg-secondary rounded-lg p-2 flex flex-col gap-5">
+            <span class="flex text-lg w-full justify-start text-white font-bold">
+                Services
+            </span>
+            <span class="flex justify-end text-3xl font-bold truncate w-full text-white">
+                {{total_service}}
+            </span>
+        </div>
+        <div class="w-full bg-primary rounded-lg p-2 flex flex-col gap-5">
+            <span class="flex text-lg w-full justify-start text-white font-bold">
+                patient
+            </span>
+            <span class="flex justify-end text-3xl font-bold truncate w-full text-white">
+                {{total_patient}}
+            </span>
+        </div>
+    </div>
+
+    <div class="p-2 rounded-lg border-2 border-gray-100 flex flex-col mt-2">
+        <h1 class="text-2xl font-bold tracking-wider">
+            Appointments
+        </h1>
+        <div class="overflow-x-auto h-64 ">
+            <table class="table table-xs">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Patient</th>
+                        <th>Date</th>
+                        <th>Service</th>
+                        <!-- <th>location</th>
+                        <th>Last Login</th>
+                        <th>Favorite Color</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <th></th>
+                        <td>{{appointment.patient}}</td>
+                        <td>{{appointment.date}}</td>
+                        <td>{{appointment.service.name}}</td>
+                        <!-- <td>Canada</td>
+                        <td>12/16/2020</td>
+                        <td>Blue</td> -->
+                    </tr>
+
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="p-2 rounded-lg border-2 border-gray-100 flex flex-col mt-2">
+        <h1 class="text-2xl font-bold tracking-wider">
+           Services
+        </h1>
+        <div class="overflow-x-auto h-64 ">
+            <table class="table table-xs">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>description</th>
+                        <th>price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    <tr>
+                        <td></td>
+                        <td>{{service.name}}</td>
+                        <td>{{service.description}}</td>
+                        <td>{{service.price}}</td>
+                    </tr>
+
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="p-2 rounded-lg border-2 border-gray-100 flex flex-col mt-2">
+        <h1 class="text-2xl font-bold tracking-wider">
+            Patient
+        </h1>
+        <div class="overflow-x-auto h-64 ">
+            <table class="table table-xs">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Job</th>
+                        <th>company</th>
+                        <th>location</th>
+                        <th>Last Login</th>
+                        <th>Favorite Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in patients %}
+                    <tr>
+                        <th>1</th>
+                        <td>Cy Ganderton</td>
+                        <td>Quality Control Specialist</td>
+                        <td>Littel, Schaden and Vandervort</td>
+                        <td>Canada</td>
+                        <td>12/16/2020</td>
+                        <td>Blue</td>
+                    </tr>
+
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock sub_content %}

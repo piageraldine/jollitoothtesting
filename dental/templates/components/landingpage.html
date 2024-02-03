@@ -1,0 +1,30 @@
+{% extends 'components\master.html' %}
+
+
+
+{% block title %}
+
+
+
+{% block subtitle %}
+
+{% endblock subtitle %}
+
+
+{% endblock title %}
+
+
+
+{% block content %}
+    {% include 'components/navbar.html' %}
+<div class="w-full h-full flex justify-center bg-pink-50">
+    <div class="w-5/6 h-full">
+
+        {% block subContent %}
+
+        {% endblock subContent %}
+
+    </div>
+</div>
+
+{% endblock content %}

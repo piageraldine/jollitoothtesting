@@ -1,0 +1,44 @@
+{% load static %}
+
+<div class="w-full h-full flex flex-col gap-2">
+    <div class="flex items-center space-x-5 mb-10">
+        <img src="{% static '/images/logo.png' %}" alt="" srcset="" class="w-12 h-auto object object-center rounded-full">
+        <h1 class="text-pink-500 font-bold text-lg">
+            Jolliteeth
+        </h1>
+    </div>
+    <div class="flex flex-col gap-2 capitalize tracking-wider">
+        <a href="{% url 'dashboard' %}" class="py-2 rounded-lg hover:bg-pink-200 p-2 duration-700">
+            <span>
+                <i class="fi fi-rr-dashboard pt-1"></i>
+            </span>
+            <span>
+                dashboard
+            </span>
+        </a>
+        <a href="{% url 'service_index' %}" class="py-2 rounded-lg hover:bg-pink-200 p-2 duration-700">
+            <span>
+                <i class="fi fi-rr-user-headset pt-1"></i>
+            </span>
+            <span>
+                services
+            </span>
+        </a>
+        <a href="{% url 'appointment_index' %}" class="py-2 rounded-lg hover:bg-pink-200 p-2 duration-700">
+            <span>
+                <i class="fi fi-rr-calendar-lines-pen pt-1"></i>
+            </span>
+            <span>
+                appointments
+            </span>
+        </a>
+        <a href="#" class="py-2 rounded-lg hover:bg-pink-200 p-2 duration-700">
+            <span>
+                <i class="fi fi-rr-users-alt pt-1"></i>
+            </span>
+            <span>
+               patient
+            </span>
+        </a>    
+    </div> 
+</div>

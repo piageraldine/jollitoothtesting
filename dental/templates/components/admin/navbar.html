@@ -1,0 +1,13 @@
+<div class="navbar bg-gray-50 rounded-lg w-full">
+    <div class="flex-1 capitalize">
+      <a class="btn btn-ghost text-xl">{{user.username}}</a>
+    </div>
+    <div class="flex-none">
+      <a href="{% url 'logout' %}">
+        <button class="btn btn-square btn-ghost">
+          <i class="fi fi-rr-sign-out-alt"></i>
+        </button>
+      </a>
+    
+    </div>
+  </div>

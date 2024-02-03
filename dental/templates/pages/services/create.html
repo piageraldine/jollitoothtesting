@@ -1,0 +1,40 @@
+{% extends 'components/layout/auth.html' %}
+
+
+
+{% block sub_title %}
+    create
+{% endblock sub_title %}
+    
+
+
+{% block sub_content %}
+    <div class="w-full flex flex-col gap-2 rounded-lg bg-gray-50 h-full p-5">
+       <h1 class="text-2xl font-bold">
+            Service - Create
+       </h1>
+       <form method="POST" action="{% url 'service_create' %}" class="flex flex-col gap-2" enctype="multipart/form-data">
+
+        {% csrf_token %}
+            <div class="flex flex-col gap-2">
+                <label for="" class="text-sm text-gray-500">Image</label>
+                <input type="file" name="image" class="file-input bg-gray-100 file-input-accent w-full">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="" class="text-sm text-gray-500">name</label>
+                <input type="text" name="name" class="file-input bg-gray-100 file-input-accent w-full" placeholder="name">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="" class="text-sm text-gray-500">description</label>
+                <textarea name="description" id="" cols="30" rows="10" class="textarea textarea-accent bg-gray-100" placeholder="description"></textarea>
+            </div>
+            <div class="flex flex-col">
+                <label for="" class="text-sm text-gray-500">price</label>
+                <input type="text" name="price" class="file-input bg-gray-100 file-input-accent w-full" placeholder="price">
+            </div>
+
+            <button class="btn btn-accent">Add</button>
+       </form>
+    </div>
+{% endblock sub_content %}
+    
